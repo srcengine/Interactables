@@ -53,7 +53,7 @@ function Interactable(boxShadowACtive = null, boxShadowPassive = null)
             event.preventDefault();
             return false;
         }
-        resizeElem.setAttribute("src", "./drawing-resize_plain.svg");
+        resizeElem.setAttribute("src", "https://srcengine.github.io/Interactables/drawing-resize_plain.svg");
         resizeElem.className = "resize";
         resizeElem.style = "position: absolute; bottom: 0; right: 0; cursor: nw-resize; width: 1rem; height: 1rem"
 
@@ -61,7 +61,7 @@ function Interactable(boxShadowACtive = null, boxShadowPassive = null)
             event.preventDefault();
             return false;
         }
-        slideElem.setAttribute("src", "./drawing-slide.svg");
+        slideElem.setAttribute("src", "https://srcengine.github.io/Interactables/drawing-slide.svg");
         slideElem.className = "slide";
         slideElem.style = "left:0; position: absolute; width: 99%; height: 0.5rem; cursor: ns-resize; bottom: 0";
 
@@ -69,7 +69,7 @@ function Interactable(boxShadowACtive = null, boxShadowPassive = null)
             event.preventDefault();
             return false;
         }
-        dockElem.setAttribute("src", "./dock_plain.svg");
+        dockElem.setAttribute("src", "https://srcengine.github.io/Interactables/dock_plain.svg");
         dockElem.className = "dock";
         dockElem.style = "position: absolute; width: 1rem; height: 1rem; cursor: pointer; top: 0; left: 0";
 
