@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="33.233883mm"
+   height="33.233879mm"
+   viewBox="0 0 33.233883 33.233879"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="162.48778"
+       y="408.92758"
+       width="51.454468"
+       height="71.715698"
+       id="rect3531" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-41.959058,-75.994043)">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2.065;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect234"
+       width="20.779253"
+       height="20.779253"
+       x="42.991558"
+       y="87.416168"
+       rx="0.16114807"
+       ry="0.16114807" />
+    <rect
+       style="fill:#7f817f;fill-opacity:1;stroke:#000000;stroke-width:2.065;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect234-8-2"
+       width="20.779253"
+       height="20.779253"
+       x="53.381187"
+       y="77.026543"
+       rx="5.2132158"
+       ry="4.7923269" />
+    <g
+       id="g2686-8"
+       transform="translate(17.405715,44.07448)">
+      <g
+         id="g2">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2.065;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           d="m 32.362438,58.694875 c 0.02746,-5.564243 1.387465,-10.489865 9.294624,-12.277753"
+           id="path1004-7" />
+        <path
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.065;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           d="m 32.569327,59.878138 2.51036,-2.732912"
+           id="path2659-9" />
+        <path
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.065;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           d="m 32.569327,59.878138 -2.732912,-2.51036"
+           id="path2659-3-2" />
+      </g>
+    </g>
+  </g>
+</svg>

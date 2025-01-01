@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+
+<html>
+    <head>
+        <style>
+            /* sets pointer-events==none to all elements in main except for div elements */
+            html {
+                min-width: 300px; 
+                /* max-width: 800px */
+            }
+            main {margin: 0 10%}
+            @media (width < 400px) {
+                main {margin: 0;}
+                body {font-size: small;}
+            }
+            main :not(div):not(img):not(a):not(button) {pointer-events: none}
+            
+            
+            a {pointer-events: auto;}
+            div {padding: 5px;}
+            div {background-color: white;}
+        </style>
+    </head>
+    <body Content-Security-Policy: frame-src https://srctradesllc.com/>
+        
+        
+
+        <main>
+            <h1>Interactables</h1>
+            <p>
+                <strong>Interactables</strong> is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a> 
+                <a href="https://en.wikipedia.org/wiki/Software_framework">framework</a> 
+                that allows you to interact with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">html elements</a>.
+                <div >
+                    <div class="resizable">
+                        <ul>
+                            <li><a href="#Moveables">Moveables</a></li>
+                            <li><a href="#Resizables">Resizables</a></li>
+                            <li><a href="#Slidables">Slidables</a></li>
+                            <li><a href="#Dockables">Dockables</a></li><br>
+                            <li><a href="#Setup">Setup Framework</a></li>
+                            
+                        </ul>
+                        You can move, resize, dock & undock elements according to the class names you give them.
+                        Drag the red square below is an element with classname 'moveable', which you can move by dragging it.
+                        <br><br>
+                    </div>
+                </div>
+                <hr>
+                <h2>Elements</h2>
+                <hr>
+                <h4 id="Moveables">Moveables</h4>
+                <div id="video-container">
+                    
+                    To Use:
+                    <ul>
+                        <li>To make an element moveable, classify it with '<strong>moveable</strong>'. </li>
+                        <li>Click and drag the element.</li>
+                        <li>While docked, the element is bound to it's container.</li>
+                        <li>While undocked, you can move it anywhere in the body container.</li>
+                    </ul>
+                    <div id="video" class="moveable resizable dockable DockedTo-video-container" style="width: 250px;">
+                        <video src="movs/moveable.mp4" loop autoplay style="width: 100%;"></video>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h4 id="Resizables">Resizables</h4>
+                    To Use:
+                    <ul>
+                        <li>To make an element resizable, classify it with '<strong>resizable</strong>'.</li>
+                        <li>To resize it, click and drag the icon in the bottom-right corner of the element.</li>
+                        <li>The video shown above is resizable.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="slidable">
+                    <h4 id="Slidables">Slidables</h4>
+                    This is a slidable container. To use it:<br>
+                    <ul>
+                        <li>Classify the element '<strong>slidable</strong>'</li>
+                        <li>To resize the element, drag the bottom up or down.</li>
+                        <li>This element is slidable.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div id="parent-dockable">
+                    <h4 id="Dockables">Dockables</h4>
+                    When you switch between docked and undocked, the element's position switches between relative and absolute. 
+                    If the container element id is found, resizable.js switches the element's node between the body and container node.  
+                    <br><br>
+                    To Use:
+                    <ul>
+                        <li>Classify the element '<strong>dockable</strong>'.</li>
+                        <li>Set the 'id' of the parent element. If you leave this blank</li>
+                        <li>To dock and undock it, double-click in the upper-left hand corner.</li>
+                    </ul>
+                    
+                    <div class="dockable moveable resizable docked" style="width: 200px; height: 200px;">
+                        <h2>Dockable #2</h2>
+                        This is another dockable. Add as many as you like. Double click the icon to dock or undock it.
+                    </div>
+                </div>
+
+                <hr>
+                <div>
+                    <h2 id="Setup">Setup Framework</h2>
+                    To use Interactables:
+                    <ol>
+                        <li><strong>Classify elements</strong> as one or more of the interactable class names.</li>
+                        <li><strong>Load resizable.js</strong> when the page loads.</li>
+                        <li><strong>Run Resizable()</strong> function. If desired, include optional parameters.</li>
+                    </ol>
+                    Only the box-shadow styling is changed when the element is interacted with. 
+                    It applies a passive styling and an active styling, both of which set the 'box-shadow' property.
+                    You can easily make 
+                </div>
+                <div class="birthable">
+                    <h2>Birthable</h2>
+                    Birthables can recieve cloenables.
+                    <br><br>
+                    Drag a cloneable over this element to birth it here.
+                </div>
+            </p>
+        </main>
+        
+        <div class="dockable moveable undocked DockedTo-parent-dockable cloneable">
+            <h2>Dockable #1</h2>
+            <p>Double click the icon to dock or undock it.</p>  
+        </div>
+
+        <script src="interactable.js" type="text/javascript"></script>
+        <script>
+            //to use default styling, run:
+            Interactable();
+            
+            //to make the Interactable elements boxshadow red, run the following instead
+            //Interactable('0px 0px 20px 4px red', '0px 0px 1px 1px red');
+
+            //for no box-shadow
+            //Interactable('none', 'none');
+        </script>
+
+        
+    </body>
+</html>
