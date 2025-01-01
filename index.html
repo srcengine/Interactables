@@ -7,6 +7,7 @@
             /* sets pointer-events==none to all elements in main except for div elements */
             html {
                 min-width: 300px; 
+                /* overflow: clip; */
                 /* max-width: 800px */
             }
             main {margin: 0 10%}
@@ -14,10 +15,10 @@
                 main {margin: 0;}
                 body {font-size: small;}
             }
-            main :not(div):not(img):not(a):not(button) {pointer-events: none}
+            /* main :not(div):not(img):not(a):not(button) {pointer-events: none} */
             
             
-            a {pointer-events: auto;}
+            a {pointer-events: auto; cursor: pointer; color: blue;}
             div {padding: 5px;}
             div {background-color: white;}
         </style>
@@ -55,7 +56,7 @@
                     
                     To Use:
                     <ul>
-                        <li>To make an element moveable, classify it with '<strong>moveable</strong>'. </li>
+                        <li>To make an element moveable, classify it with '<strong class="moveable">moveable</strong>'. </li>
                         <li>Click and drag the element.</li>
                         <li>While docked, the element is bound to it's container.</li>
                         <li>While undocked, you can move it anywhere in the body container.</li>
@@ -106,37 +107,75 @@
                 <hr>
                 <div>
                     <h2 id="Setup">Setup Framework</h2>
-                    To use Interactables:
+                    <h3>To use Interactables:</h3>
                     <ol>
-                        <li><strong>Classify elements</strong> as one or more of the interactable class names.</li>
-                        <li><strong>Load resizable.js</strong> when the page loads.</li>
-                        <li><strong>Run Resizable()</strong> function. If desired, include optional parameters.</li>
+                        <li>On your html document, <strong>classify elements</strong> as one or more of the interactable class names.</li>
+                        <li><strong>Load resizable.js</strong> when the html document loads.</li>
+                        <li><strong>Run Resizable()</strong> function when the html document lodas, or as desired, including optional parameters.</li>
                     </ol>
-                    Only the box-shadow styling is changed when the element is interacted with. 
-                    It applies a passive styling and an active styling, both of which set the 'box-shadow' property.
-                    You can easily make 
+                    <h3>CSS Styling</h3>
+                    When an element is interacted with, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow">box-shadow styling</a> is changed. 
+                    Interactable elements use an 'active' and 'passive' to show when the element is being interacted with. 
+                    <br>
+                    You can easily adjust the box-shadow when you call the Interactable() function. For example, to make things red, call
+                    <code><a id="makeRed"> Interactable('0px 0px 20px 4px red', '0px 0px 1px 1px red')</a> </code>
+                     with the styling parameters desired. 
+                    <h4>Styles Modified</h4>
+                    In order to show the elements, this script modifies the following css attributes.
+                     <ul>
+                        <li>top, left, height, width: sets to control size and position of element.</li>
+                        <li>
+                            box-shadow: sets for active and passive modes.
+                        </li>
+                        <li>
+                            position: sets to absolute or relative.
+                        </li>   
+                        <li>
+                            overflow: sets to clip.
+                        </li>
+                     </ul>
+                     
+                    <!-- <br>
+                     <label>R</label><input type="range"><br>
+                     <label>G</label><input type="range"><br>
+                     <label>B</label><input type="range"> -->
+                     <h3>Function Parameters</h3>
+                     The function syntax is:
+                     <br><code>
+                        Interactable([box-shadow-active],[box-shadow-passive])
+                     </code><br>
+
                 </div>
-                <div class="birthable">
+                <!-- TO DO: Add Birthable example -->
+                <!-- <div class="birthable">
                     <h2>Birthable</h2>
                     Birthables can recieve cloenables.
                     <br><br>
                     Drag a cloneable over this element to birth it here.
-                </div>
+                </div> -->
             </p>
         </main>
         
-        <div class="dockable moveable undocked DockedTo-parent-dockable cloneable">
-            <h2>Dockable #1</h2>
-            <p>Double click the icon to dock or undock it.</p>  
+        <div class="dockable moveable undocked DockedTo-parent-dockable cloneable"
+        style="top: 110px; left:570px">
+            <h2>Interactables</h2>
+            <h3>Dockable Element</h3>
+            <p>Double click the icon to dock or undock this element.</p>  
         </div>
 
         <script src="interactable.js" type="text/javascript"></script>
         <script>
-            //to use default styling, run:
+            window.scrollTo(0,0);
+            window.document.getElementById("makeRed").addEventListener('click', makeRed);
+
+            //use default box-shadow styling
             Interactable();
             
-            //to make the Interactable elements boxshadow red, run the following instead
-            //Interactable('0px 0px 20px 4px red', '0px 0px 1px 1px red');
+            function makeRed()
+            {
+                //to make the Interactable elements boxshadow red
+                Interactable('0px 0px 20px 4px red', '0px 0px 1px 1px red');
+            }
 
             //for no box-shadow
             //Interactable('none', 'none');
